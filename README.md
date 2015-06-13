@@ -1,11 +1,11 @@
-<head>
+<h1>
  Configuration for Awesome 3.5
-</head>
+</h1>
 <hr/>
 
-<head>
+<h1>
   Required packages
-</head>
+</h1>
 <ul>
   <li>
     wmname
@@ -20,3 +20,72 @@
     awesome-extra
   </li>
 </ul>
+
+<hr/>
+
+<h1>
+  Shortcuts
+</h1>
+<table>
+ <tr>
+   <td>
+     <strong>
+       super+z
+     </strong>
+   </td>
+   <td>
+     Change keyboard layout
+   </td>
+ </tr>
+ <tr>
+   <td>
+     <strong>
+       super+ctrl+l
+     </strong>
+   </td>
+   <td>
+     lock screen
+   </td>
+ </tr>
+ <tr>
+   <td>
+     <strong>
+       super+ctrl+up
+     </strong>
+   </td>
+   <td>
+     volume up
+   </td>
+ </tr>
+ <tr>
+   <td>
+     <strong>
+       super+ctrl+down
+     </strong>
+   </td>
+   <td>
+     volume down
+   </td>
+ </tr>
+ <tr>
+   <td>
+     <strong>
+       super+ctrl+left
+     </strong>
+   </td>
+   <td>
+     move to a tag on the left on all monitors
+   </td>
+ </tr>
+ <tr>
+   <td>
+     <strong>
+       super+ctrl+right
+     </strong>
+   </td>
+   <td>
+     move to a tag on the right on all monitors
+   </td>
+ </tr>
+</table>
+Other shortcuts are same as in default awesome
