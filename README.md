@@ -1,7 +1,11 @@
-<h>
-  Required packages
-</h>
+<head>
+ Configuration for Awesome 3.5
+</head>
 <hr/>
+
+<head>
+  Required packages
+</head>
 <ul>
   <li>
     wmname
