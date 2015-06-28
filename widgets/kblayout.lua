@@ -13,7 +13,7 @@ kbdcfg.switch = function (lang)
     kbdcfg.current = kbdcfg.current % #(kbdcfg.layout) + 1
     t = kbdcfg.layout[kbdcfg.current]
   end
-  kbdcfg.widget:set_text(" " .. t[3] .. " ")
+  kbdcfg.widget:set_markup("<span color='" .. beutiful.fg_focus .. "'> " .. t[3] .. " </span>")
   os.execute( kbdcfg.cmd .. " " .. t[1] .. " " .. t[2] )
 end
 

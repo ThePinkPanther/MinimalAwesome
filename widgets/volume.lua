@@ -9,7 +9,7 @@ function update_volume(widget)
    local status = fd:read("*all")
    fd:close()
 
-   widget:set_markup(" vol: <span color='#FFFFFF' >" .. status .. "</span>")
+   widget:set_markup("<span color='" .. beautiful.fg_normal .. "'>vol: </span><span color='" .. beautiful.fg_focus .. "' >" .. status .. "</span>")
 end
 
 volume_widget:buttons(awful.util.table.join(

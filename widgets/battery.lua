@@ -14,10 +14,10 @@ function update_battery()
     local battery_status = fh:read("*l")    
     fh:close()
 
-    local color = "#FFFFFF"
+    local color = beautiful.fg_focus 
     local is_discharging = false;
     if battery_status == "Discharging," then
-      color = "#FF0000"
+      color = beautiful.fg_urgent 
       is_discharging = true
     end
     
@@ -36,7 +36,7 @@ function update_battery()
          has_notified = false
     end
 
-    batterywidget:set_markup("pow: <span color='" .. color .. "'>" .. battery_level .. "%</span>")
+    batterywidget:set_markup("<span color='" .. beautiful.fg_normal .. "'>pow: </span><span color='" .. color .. "'>" .. battery_level .. "%</span>")
   end 
 
 
