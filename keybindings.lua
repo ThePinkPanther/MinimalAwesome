@@ -8,13 +8,16 @@ commands.volumeMute = "amixer set Master toggle"
 globalkeys = awful.util.table.join(
     -- keyboard layout switch
     awful.key({ modkey, }, "z", function () kbdcfg.switch() end),
+
     -- screenserver lock
     awful.key({ modkey, "Control" }, "l", function () awful.util.spawn_with_shell(commands.screensaver) end),
+
     -- volume controll
     awful.key({ modkey, "Control" }, "Up", function ()
         awful.util.spawn(commands.volumeUp)
         update_volume(volume_widget)
     end),
+
     awful.key({ modkey, "Control" }, "Down", function ()
         awful.util.spawn(commands.volumeDown) 
         update_volume(volume_widget)
@@ -30,7 +33,7 @@ globalkeys = awful.util.table.join(
         update_volume(volume_widget)
     end),
     
-    awful.key({ }, "XF86AudioMute", function ()
+    awful.key({ modkey, }, "XF86AudioMute", function ()
     awful.util.spawn(commands.volumeMute) end),
 
     -- Multi screen tag change 
@@ -41,6 +44,7 @@ globalkeys = awful.util.table.join(
           awful.tag.viewnext(i)
         end
       end ),
+
       awful.key({ modkey, "Control"   }, "Left",
       function()
         for i = 1, screen.count() do
