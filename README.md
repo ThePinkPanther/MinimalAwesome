@@ -87,5 +87,35 @@
      move to a tag on the right on all monitors
    </td>
  </tr>
+ <tr>
+   <td>
+     <strong>
+       super+space
+     </strong>
+   </td>
+   <td>
+     tiled layout
+   </td>
+ </tr>
+ <tr>
+   <td>
+     <strong>
+       super+shift+space
+     </strong>
+   </td>
+   <td>
+     float layout
+   </td>
+ </tr>
+ <tr>
+   <td>
+     <strong>
+       super+shift+ctrl+space
+     </strong>
+   </td>
+   <td>
+     zoom layout
+   </td>
+ </tr>
 </table>
 Other shortcuts are same as in default awesome
