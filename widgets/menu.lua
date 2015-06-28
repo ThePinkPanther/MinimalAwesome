@@ -2,16 +2,18 @@
 -- Load Debian menu entries
 require("debian.menu")
 
-myawesomemenu = {
-   { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awesome.conffile },
+custommenu = {
+   { "disk management" , "gnome-disks" },
+   { "disks space" , "baobab" },
+   { "screen management" , "arandr" },
+   { "themes" , "lxappearance" },
+   { "sound" , "alsamixergui" },
    { "restart", awesome.restart },
    { "quit", awesome.quit }
 }
 
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "Debian", debian.menu.Debian_menu.Debian },
-                                    { "open terminal", terminal }
+mymainmenu = awful.menu({ items = { { "tools", custommenu },
+                                    { "Debian", debian.menu.Debian_menu.Debian }
                                   }
                         })
 
