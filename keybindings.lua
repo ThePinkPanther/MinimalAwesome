@@ -19,6 +19,17 @@ globalkeys = awful.util.table.join(
         awful.util.spawn(commands.volumeDown) 
         update_volume(volume_widget)
     end),
+    
+    awful.key({ modkey, }, "XF86AudioRaiseVolume", function ()
+        awful.util.spawn(commands.volumeUp) 
+        update_volume(volume_widget)
+    end),
+    
+    awful.key({ modkey, }, "XF86AudioLowerVolume", function ()
+        awful.util.spawn(commands.volumeDown) 
+        update_volume(volume_widget)
+    end),
+    
     awful.key({ }, "XF86AudioMute", function ()
     awful.util.spawn(commands.volumeMute) end),
 
