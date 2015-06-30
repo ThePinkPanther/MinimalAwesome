@@ -4,22 +4,23 @@
 <hr/>
 
 <h1>
-  Required packages
+  Installation:
 </h1>
-<ul>
-  <li>
-    wmname
-  </li>
-  <li>
-    amixer
-  </li>
-  <li>
-    i3lock
-  </li>
-  <li>
-    awesome-extra
-  </li>
-</ul>
+
+<pre>
+cd .config
+git clone https://github.com/ThePinkPanther/Awesome-rc.lua.git awesome
+</pre>
+
+This configuration depends on some programs:
+
+    amixer, i3lock
+
+And uses theese programs in the toolset:
+
+    baobab, gnome-disks, arandr, lxapperance
+    
+ If you prefer not to install them, edit <b>keybindings.lua</b> top lines. You should also probably edit  <b>/widgets/battery.lua</b> to set beeping sound that indicates low battery.
 
 <hr/>
 
@@ -85,6 +86,36 @@
    </td>
    <td>
      move to a tag on the right on all monitors
+   </td>
+ </tr>
+ <tr>
+   <td>
+     <strong>
+       super+space
+     </strong>
+   </td>
+   <td>
+     tiled layout
+   </td>
+ </tr>
+ <tr>
+   <td>
+     <strong>
+       super+shift+space
+     </strong>
+   </td>
+   <td>
+     float layout
+   </td>
+ </tr>
+ <tr>
+   <td>
+     <strong>
+       super+shift+ctrl+space
+     </strong>
+   </td>
+   <td>
+     zoom layout
    </td>
  </tr>
 </table>
