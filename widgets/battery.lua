@@ -6,7 +6,7 @@ battery_low_notification_command = "mplayer /usr/share/sounds/freedesktop/stereo
 has_notified = false
 
 function update_battery()
-    local fh = assert(io.popen("acpi | cut -d, -f 2 - | cut -c2-3", "r"))
+    local fh = assert(io.popen("acpi | cut -d, -f 2 - | grep -o -E \"[0-9]+\"", "r"))
     local battery_level = tonumber(fh:read("*l"))
     fh:close()
     
