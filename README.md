@@ -12,15 +12,9 @@ cd .config
 git clone https://github.com/ThePinkPanther/Awesome-rc.lua.git awesome
 </pre>
 
-This configuration depends on some programs:
+For configuration and dependancies see settings.lua
 
-    amixer, i3lock
 
-And uses theese programs in the toolset:
-
-    baobab, gnome-disks, arandr, lxapperance
-    
- If you prefer not to install them, edit <b>keybindings.lua</b> top lines. You should also probably edit  <b>/widgets/battery.lua</b> to set beeping sound that indicates low battery.
 
 <hr/>
 
@@ -28,6 +22,26 @@ And uses theese programs in the toolset:
   Shortcuts
 </h1>
 <table>
+<tr>
+   <td>
+     <strong>
+       super+b
+     </strong>
+   </td>
+   <td>
+     Open side toolbar
+   </td>
+ </tr>
+ <tr>
+    <td>
+      <strong>
+        super+PrintScreen
+      </strong>
+    </td>
+    <td>
+      Print screen
+    </td>
+  </tr>
  <tr>
    <td>
      <strong>
