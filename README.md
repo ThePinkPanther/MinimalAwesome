@@ -3,6 +3,13 @@
 </h1>
 <hr/>
 
+Basic look:
+<img src="https://raw.githubusercontent.com/ThePinkPanther/Awesome-rc.lua/master/screenshots/Screenshot%202015-07-09%2002%3A34.png"/>
+In action:
+<img src="https://raw.githubusercontent.com/ThePinkPanther/Awesome-rc.lua/master/screenshots/Screenshot%202015-07-09%2002%3A34.png"/>
+super+b:
+<img src="https://raw.githubusercontent.com/ThePinkPanther/Awesome-rc.lua/master/screenshots/Screenshot%202015-07-09%2002%3A38.png"/>
+
 <h1>
   Installation:
 </h1>
@@ -12,7 +19,7 @@ cd .config
 git clone https://github.com/ThePinkPanther/Awesome-rc.lua.git awesome
 </pre>
 
-For configuration and dependancies see settings.lua
+For configuration and dependancies see <a href="https://github.com/ThePinkPanther/Awesome-rc.lua/blob/master/settings.lua">settings.lua</a>
 
 
 
