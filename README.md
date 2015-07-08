@@ -6,7 +6,7 @@
 Basic look:
 <img src="https://raw.githubusercontent.com/ThePinkPanther/Awesome-rc.lua/master/screenshots/Screenshot%202015-07-09%2002%3A34.png"/>
 In action:
-<img src="https://raw.githubusercontent.com/ThePinkPanther/Awesome-rc.lua/master/screenshots/Screenshot%202015-07-09%2002%3A34.png"/>
+<img src="https://raw.githubusercontent.com/ThePinkPanther/Awesome-rc.lua/master/screenshots/Screenshot%202015-07-09%2002%3A37.png"/>
 super+b:
 <img src="https://raw.githubusercontent.com/ThePinkPanther/Awesome-rc.lua/master/screenshots/Screenshot%202015-07-09%2002%3A38.png"/>
 
