@@ -1,23 +1,45 @@
 local wibox = require("wibox")
 local awful = require("awful")
+local beautiful = require("beautiful")
 
-volume_widget = wibox.widget.textbox()
-volume_widget:set_align("right")
+local VolumeWidget = {}
 
-function update_volume(widget)
-   local fd = io.popen("amixer -D pulse sget Master | egrep -o \"[0-9]+%\" | head -1")
-   local status = fd:read("*all")
-   fd:close()
+local layout =  wibox.layout.fixed.horizontal()
+local textbox = wibox.widget.textbox()
 
-   widget:set_markup("<span color='" .. beautiful.fg_normal .. "'>vol: </span><span color='" .. beautiful.fg_focus .. "' >" .. status .. "</span>")
+local myicon = wibox.widget.imagebox()
+myicon:set_image(beautiful.titlebar_audio_icon)
+myicon:fit(2,10)
+
+layout:add(myicon)
+layout:add(textbox)
+
+VolumeWidget.widget = layout
+
+
+function VolumeWidget.update()
+    local fd = io.popen("amixer -D pulse sget Master | egrep -o \"[0-9]+%\" | head -1")
+    local status = fd:read("*all")
+    fd:close()
+
+    textbox:set_markup(
+        " <span color='" .. beautiful.fg_focus ..
+            "' >" .. status ..
+            "</span>")
 end
 
-volume_widget:buttons(awful.util.table.join(
-   awful.button({ }, 1, function () awful.util.spawn("alsamixergui") end)
- ))
+function VolumeWidget.onclick()
+    awful.util.spawn("alsamixergui")
+end
 
-update_volume(volume_widget)
+VolumeWidget.widget:buttons(awful.util.table.join(awful.button({}, 1, function()
+    VolumeWidget.onclick()
+end)))
 
-mytimer = timer({ timeout = 1 })
-mytimer:connect_signal("timeout", function () update_volume(volume_widget) end)
-mytimer:start()
+VolumeWidget.update()
+
+VolumeWidget.timer = timer({ timeout = 5 })
+VolumeWidget.timer:connect_signal("timeout", VolumeWidget.update)
+VolumeWidget.timer:start()
+
+return VolumeWidget

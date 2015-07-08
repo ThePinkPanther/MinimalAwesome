@@ -1,23 +1,28 @@
 -- Keyboard map indicator and changer
-kbdcfg = {}
-kbdcfg.cmd = "setxkbmap"
-kbdcfg.layout = { 
-    { "us", "" , "US" }, 
-    { "lt", "" , "LT" } } 
-kbdcfg.current = 1  -- us is our default layout
-kbdcfg.widget = wibox.widget.textbox()
-kbdcfg.widget:set_text(" " .. kbdcfg.layout[kbdcfg.current][3] .. " ")
-kbdcfg.switch = function (lang)
-  local t = lang
-  if lang == nil then
-    kbdcfg.current = kbdcfg.current % #(kbdcfg.layout) + 1
-    t = kbdcfg.layout[kbdcfg.current]
-  end
-  kbdcfg.widget:set_markup("<span color='" .. beautiful.fg_focus .. "'> " .. t[3] .. " </span>")
-  os.execute( kbdcfg.cmd .. " " .. t[1] .. " " .. t[2] )
+local wibox = require("wibox")
+local beautiful = require("beautiful")
+local awful = require("awful")
+
+local KeyboardLayoutWidget = {}
+KeyboardLayoutWidget.cmd = "setxkbmap"
+KeyboardLayoutWidget.layout = require("settings").keyboard_layouts
+
+KeyboardLayoutWidget.current = 1 -- us is our default layout
+KeyboardLayoutWidget.widget = wibox.widget.textbox()
+--KeyboardLayoutWidget.widget:set_text(" " .. KeyboardLayoutWidget.layout[KeyboardLayoutWidget.current][3] .. " ")
+KeyboardLayoutWidget.switch = function(lang)
+    local t = lang
+    if lang == nil then
+        KeyboardLayoutWidget.current = KeyboardLayoutWidget.current % #(KeyboardLayoutWidget.layout) + 1
+        t = KeyboardLayoutWidget.layout[KeyboardLayoutWidget.current]
+    end
+    KeyboardLayoutWidget.widget:set_markup("<span color='" .. beautiful.fg_focus .. "'> " .. t[3] .. " </span>")
+    os.execute(KeyboardLayoutWidget.cmd .. " " .. t[1] .. " " .. t[2])
 end
 
- -- Mouse bindings
-kbdcfg.widget:buttons(
- awful.util.table.join(awful.button({ }, 1, function () kbdcfg.switch() end))
-)
+KeyboardLayoutWidget.switch(KeyboardLayoutWidget.layout[KeyboardLayoutWidget.current])
+
+-- Mouse bindings
+KeyboardLayoutWidget.widget:buttons(awful.util.table.join(awful.button({}, 1, function() KeyboardLayoutWidget.switch() end)))
+
+return KeyboardLayoutWidget

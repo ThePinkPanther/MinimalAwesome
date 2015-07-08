@@ -1,6 +1,13 @@
 local wibox = require("wibox")
+local beautiful = require("beautiful")
 
-separator_widget = wibox.widget.textbox()
-separator_widget:set_text(" | ")
+local WidgetSeparator = {}
+WidgetSeparator.text = "      "
+
+WidgetSeparator.widget = wibox.widget.textbox()
+WidgetSeparator.widget:set_markup(
+    "<span color='" .. beautiful.fg_normal .. "'>" .. WidgetSeparator.text .. "</span>")
+
+return WidgetSeparator
 
 

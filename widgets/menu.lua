@@ -1,23 +1,11 @@
+local awful = require("awful")
+local beautiful = require("beautiful")
 
--- Load Debian menu entries
-require("debian.menu")
+local MenuWidget = {}
 
-custommenu = {
-   { "disk management" , "gnome-disks" },
-   { "disks space" , "baobab" },
-   { "screen management" , "arandr" },
-   { "themes" , "lxappearance" },
-   { "sound" , "alsamixergui" },
-   { "restart", awesome.restart },
-   { "quit", awesome.quit }
-}
+MenuWidget.widget = awful.widget.launcher({
+    image = beautiful.awesome_icon,
+    menu = awful.menu({ items = require("settings").menu })
+})
 
-mymainmenu = awful.menu({ items = { { "tools", custommenu },
-                                    { "Debian", debian.menu.Debian_menu.Debian }
-                                  }
-                        })
-
-mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
-                                     menu = mymainmenu })
-
-menubar.utils.terminal = terminal 
+return MenuWidget
