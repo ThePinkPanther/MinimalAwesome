@@ -4,9 +4,11 @@
 
 theme = {}
 
-theme.font          = "sans 8"
+theme.font          = "DejaVu Sans Light 9"
 
 theme.bg_normal     = "#030303"
+theme.bg_normal_transparent      = "#ff000000"
+theme.popup_toolbar_background = configdir .. "/theme/black-gradient.jpg"
 theme.bg_focus      = "#5F9FDE"
 theme.bg_urgent     = "#610000"
 theme.bg_minimize   = "#444444"
@@ -50,6 +52,9 @@ theme.menu_width  = 100
 --theme.bg_widget = "#cc0000"
 
 -- Define the image to load
+theme.titlebar_audio_icon = configdir .. "/theme/titlebar/audio.png"
+theme.titlebar_battery_icon = configdir .. "/theme/titlebar/battery.png"
+
 theme.titlebar_close_button_normal = configdir .. "/theme/titlebar/close_normal.png"
 theme.titlebar_close_button_focus  = configdir .. "/theme/default/titlebar/close_focus.png"
 
