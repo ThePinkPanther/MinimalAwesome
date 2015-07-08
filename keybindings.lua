@@ -1,21 +1,22 @@
-local commands = {}
-commands.screensaver = "i3lock -u -c 000000"
-commands.volumeUp = "amixer -D pulse sset Master 10%+"
-commands.volumeDown = "amixer -D pulse sset Master 10%-"
-commands.volumeMute = "amixer set Master toggle"
+local commands = settings.commands
 
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
     -- keyboard layout switch
-    awful.key({ modkey, }, "z", function () kbdcfg.switch() end),
+    awful.key({ modkey, }, "z", switch_keyboard_layout),
+
+    awful.key({ modkey, }, "Print", function () awful.util.spawn_with_shell(commands.screenshot) end),
+
+    awful.key({ modkey, }, "b", function () toggle_popup_box(mouse.screen) end),
 
     -- screenserver lock
     awful.key({ modkey, "Control" }, "l", function () awful.util.spawn_with_shell(commands.screensaver) end),
 
+
     -- volume controll
     awful.key({ modkey, "Control" }, "Up", function ()
         awful.util.spawn(commands.volumeUp)
-        update_volume(volume_widget)
+        update_volume()
     end),
 
     awful.key({ modkey, "Control" }, "Down", function ()
@@ -177,11 +178,6 @@ for i = 1, 9 do
                       end
                   end))
 end
-
-clientbuttons = awful.util.table.join(
-    awful.button({ }, 1, function (c) client.focus = c; c:raise() end),
-    awful.button({ modkey }, 1, awful.mouse.client.move),
-    awful.button({ modkey }, 3, awful.mouse.client.resize))
 
 
 root.keys(globalkeys)
