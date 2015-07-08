@@ -3,11 +3,11 @@
 </h1>
 <hr/>
 
-Basic look:
+<h2>Basic look:</h2>
 <img src="https://raw.githubusercontent.com/ThePinkPanther/Awesome-rc.lua/master/screenshots/Screenshot%202015-07-09%2002%3A34.png"/>
-In action:
+<h2>In action:</h2>
 <img src="https://raw.githubusercontent.com/ThePinkPanther/Awesome-rc.lua/master/screenshots/Screenshot%202015-07-09%2002%3A37.png"/>
-super+b:
+<h2>super+b:</h2>
 <img src="https://raw.githubusercontent.com/ThePinkPanther/Awesome-rc.lua/master/screenshots/Screenshot%202015-07-09%2002%3A38.png"/>
 
 <h1>
