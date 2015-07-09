@@ -4,6 +4,8 @@
 
 theme = {}
 
+theme.useless_gap_width = 3
+
 theme.font          = "DejaVu Sans Light 9"
 
 theme.bg_normal     = "#030303"
@@ -18,9 +20,9 @@ theme.fg_focus      = "#ffffff"
 theme.fg_urgent     = "#f75a52"
 theme.fg_minimize   = "#ffffff"
 
-theme.border_width  = 1
-theme.border_normal = "#000000"
-theme.border_focus  = "#535d6c"
+theme.border_width  = 2
+theme.border_normal = "#333333"
+theme.border_focus  = "#5F9FDE"
 theme.border_marked = "#91231c"
 
 -- There are other variable sets
