@@ -31,7 +31,7 @@ end
 
 CalendarWidget.update()
 
-CalendarWidget.timer = timer({ timeout = 10 })
+CalendarWidget.timer = timer({ timeout = 60 })
 CalendarWidget.timer:connect_signal("timeout", CalendarWidget.update)
 CalendarWidget.timer:start()
 

@@ -9,6 +9,9 @@ local menu_widget = require("widgets.menu")
 -- Global references
 update_volume = volume_widget.update
 switch_keyboard_layout = keyboard_layout_widget.switch
+function toogle_main_menu()
+    menu_widget.menu:toggle()
+end
 
 -- {{{ Wallpaper
 if beautiful.wallpaper then
