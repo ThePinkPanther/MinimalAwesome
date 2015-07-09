@@ -101,5 +101,10 @@ for s = 1, screen.count() do
     render_widget_box(s)
 end
 
+
+function toggle_toolbar_box(s)
+    toolbar[s].visible = not toolbar[s].visible
+end
+
 -- Load popup toolbar
 require("popup_toolbar")

@@ -36,7 +36,17 @@ For configuration and dependancies see <a href="https://github.com/ThePinkPanthe
      </strong>
    </td>
    <td>
-     Open side toolbar
+     Toggle side toolbar
+   </td>
+ </tr>
+<tr>
+   <td>
+     <strong>
+       super+v
+     </strong>
+   </td>
+   <td>
+     Toggle main toolbar
    </td>
  </tr>
  <tr>

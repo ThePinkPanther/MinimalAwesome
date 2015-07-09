@@ -10,6 +10,8 @@ globalkeys = awful.util.table.join(
 
     awful.key({ modkey, }, "b", function () toggle_popup_box(mouse.screen) end),
 
+    awful.key({ modkey, }, "v", function () toggle_toolbar_box(mouse.screen) end),
+
     -- screenserver lock
     awful.key({ modkey, "Control" }, "l", function () awful.util.spawn_with_shell(commands.screensaver) end),
 
