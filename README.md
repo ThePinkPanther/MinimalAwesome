@@ -3,16 +3,23 @@
 </h1>
 <hr/>
 
+<h2>Basic look:</h2>
+<img src="https://raw.githubusercontent.com/ThePinkPanther/Awesome-rc.lua/master/screenshots/Screenshot%202015-07-09%2002%3A34.png"/>
+<h2>In action:</h2>
+<img src="https://raw.githubusercontent.com/ThePinkPanther/Awesome-rc.lua/master/screenshots/Screenshot%202015-07-09%2002%3A37.png"/>
+<h2>super+b:</h2>
+<img src="https://raw.githubusercontent.com/ThePinkPanther/Awesome-rc.lua/master/screenshots/Screenshot%202015-07-09%2002%3A38.png"/>
+
 <h1>
   Installation:
 </h1>
 
 <pre>
-cd .config
+cd ~/.config
 git clone https://github.com/ThePinkPanther/Awesome-rc.lua.git awesome
 </pre>
 
-For configuration and dependancies see settings.lua
+For configuration and dependancies see <a href="https://github.com/ThePinkPanther/Awesome-rc.lua/blob/master/settings.lua">settings.lua</a>. Also have a look at <a href="https://github.com/ThePinkPanther/MinimalAwesome/blob/master/keybindings.lua">keybindings.lua</a> for keyboard shortcuts, and <a href="https://github.com/ThePinkPanther/MinimalAwesome/blob/master/theme/theme.lua">theme/theme.lua</a> for styling.
 
 
 
