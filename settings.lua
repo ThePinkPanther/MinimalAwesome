@@ -1,6 +1,6 @@
 return {
     commands = {
-        screensaver = "i3lock -u -c 000000",
+        screensaver = "i3lock -c 000000",
         volumeUp = "amixer -D pulse sset Master 10%+",
         volumeDown = "amixer -D pulse sset Master 10%-",
         volumeMute = "amixer set Master toggle",
