@@ -15,7 +15,7 @@
 </h1>
 
 <pre>
-cd .config
+cd ~/.config
 git clone https://github.com/ThePinkPanther/Awesome-rc.lua.git awesome
 </pre>
 
