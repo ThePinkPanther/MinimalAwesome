@@ -31,7 +31,7 @@ end
 
 BigClockWidget.update()
 
-BigClockWidget.timer = timer({ timeout = 0.01 })
+BigClockWidget.timer = timer({ timeout = 1 })
 BigClockWidget.timer:connect_signal("timeout", BigClockWidget.update )
 BigClockWidget.timer:start()
 
