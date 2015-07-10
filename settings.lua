@@ -23,13 +23,19 @@ return {
             "Debian", debian.menu.Debian_menu.Debian
         }
     },
+    tags = {
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+    },
     keyboard_layouts = {
         { "us", "", "US" },
         { "lt", "", "LT" }
     },
     toolbar = {
         position = "bottom",
-        ontop = false,
         widgets = {
             "widgets.separator",
             "widgets.kblayout",

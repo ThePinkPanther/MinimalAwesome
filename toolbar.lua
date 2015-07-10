@@ -16,7 +16,7 @@ end
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ 1, 2, 3, 4, 5 }, s, awful.layout.suit.floating)
+    tags[s] = awful.tag(settings.tags, s, awful.layout.suit.floating)
 end
 
 -- Create a wibox for each screen and add it
