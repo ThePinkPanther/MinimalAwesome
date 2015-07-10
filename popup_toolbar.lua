@@ -69,8 +69,14 @@ local function render_popup_box(s)
 
     local top_layout = wibox.layout.fixed.vertical()
 
+
+
+    local widgets = {}
     for i,widget in ipairs(settings.popup_bar.widgets) do
-        top_layout:add(require(widget).widget)
+        if widgets[widget] == nil then
+            widgets[widget] = require(widget)
+        end
+        top_layout:add(widgets[widget].widget)
     end
 
     local middle_layout = wibox.layout.flex.vertical()

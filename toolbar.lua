@@ -58,8 +58,13 @@ local function render_widget_box(s)
     right_layout:add(wibox.widget.systray())
 
     center_layout:add(mytaglist[s])
+
+    local widgets = {}
     for i,widget in ipairs(settings.toolbar.widgets) do
-        center_layout:add(require(widget).widget)
+        if widgets[widget] == nil then
+            widgets[widget] = require(widget)
+        end
+        center_layout:add(widgets[widget].widget)
     end
 
     -- Now bring it all together (with the tasklist in the middle)
