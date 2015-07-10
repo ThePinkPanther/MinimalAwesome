@@ -20,7 +20,7 @@ CalendarWidget.widget = margin
 textbox:set_font(CalendarWidget.font)
 
 function CalendarWidget.update()
-    local fd = io.popen("cal | sed -re 's/\\x5f\\x08\\x20\\x5f\\x08([0-9]*)/P1^ \\1P2^/' ")
+    local fd = io.popen("cal | sed -re 's/\\x5f\\x08([0-9]*)/P1^\\1P2^/g' ")
     local status = fd:read("*all"):gsub("%P1^", "<span background='" .. beautiful.bg_focus .. "'>"):gsub("%P2^", "</span>")
     fd:close()
 
