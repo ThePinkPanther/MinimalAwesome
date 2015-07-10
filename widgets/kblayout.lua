@@ -5,7 +5,7 @@ local awful = require("awful")
 
 local KeyboardLayoutWidget = {}
 KeyboardLayoutWidget.cmd = "setxkbmap"
-KeyboardLayoutWidget.layout = require("settings").keyboard_layouts
+KeyboardLayoutWidget.layout = settings.keyboard_layouts
 
 KeyboardLayoutWidget.current = 1 -- us is our default layout
 KeyboardLayoutWidget.widget = wibox.widget.textbox()
@@ -24,5 +24,7 @@ KeyboardLayoutWidget.switch(KeyboardLayoutWidget.layout[KeyboardLayoutWidget.cur
 
 -- Mouse bindings
 KeyboardLayoutWidget.widget:buttons(awful.util.table.join(awful.button({}, 1, function() KeyboardLayoutWidget.switch() end)))
+
+switch_keyboard_layout = KeyboardLayoutWidget.switch
 
 return KeyboardLayoutWidget

@@ -1,14 +1,4 @@
--- Require widgets
-local volume_widget = require("widgets.volume")
-local battery_widget = require("widgets.battery")
-local keyboard_layout_widget = require("widgets.kblayout")
-local separator_widget = require("widgets.separator")
-local menu_widget = require("widgets.menu")
 
-
--- Global references
-update_volume = volume_widget.update
-switch_keyboard_layout = keyboard_layout_widget.switch
 function toogle_main_menu()
     menu_widget.menu:toggle()
 end
@@ -62,20 +52,15 @@ local function render_widget_box(s)
     local left_layout = wibox.layout.fixed.horizontal()
     local right_layout = wibox.layout.fixed.horizontal()
 --    left_layout:add(menu_widget.widget)
-    left_layout:add(separator_widget.widget)
     left_layout:add(mypromptbox[s])
 
 
     right_layout:add(wibox.widget.systray())
 
     center_layout:add(mytaglist[s])
-    center_layout:add(separator_widget.widget)
-    center_layout:add(keyboard_layout_widget.widget)
-    center_layout:add(separator_widget.widget)
-    center_layout:add(volume_widget.widget)
-    center_layout:add(separator_widget.widget)
-    center_layout:add(battery_widget.widget)
-    center_layout:add(separator_widget.widget)
+    for i,widget in ipairs(settings.toolbar.widgets) do
+        center_layout:add(require(widget).widget)
+    end
 
     -- Now bring it all together (with the tasklist in the middle)
     local layout = wibox.layout.align.horizontal()

@@ -1,7 +1,5 @@
 local common = require("awful.widget.common")
 local wibox_bg = require("wibox.widget.background")
-local clock_widget = require("widgets.clock_big")
-local calendar_widget = require("widgets.calendar")
 
 local popup_toolbar = {}
 
@@ -70,8 +68,10 @@ local function render_popup_box(s)
 
 
     local top_layout = wibox.layout.fixed.vertical()
-    top_layout:add(clock_widget.widget)
-    top_layout:add(calendar_widget.widget)
+
+    for i,widget in ipairs(settings.popup_bar.widgets) do
+        top_layout:add(require(widget).widget)
+    end
 
     local middle_layout = wibox.layout.flex.vertical()
     middle_layout:add(mytasklist[s])

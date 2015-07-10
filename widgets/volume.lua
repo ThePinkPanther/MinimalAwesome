@@ -42,4 +42,7 @@ VolumeWidget.timer = timer({ timeout = 5 })
 VolumeWidget.timer:connect_signal("timeout", VolumeWidget.update)
 VolumeWidget.timer:start()
 
+-- global reference
+update_volume = VolumeWidget.update
+
 return VolumeWidget

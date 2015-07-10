@@ -1,6 +1,6 @@
 return {
     commands = {
-        screensaver = "i3lock -c 000000",
+        screensaver = "i3lock -u -c 000000",
         volumeUp = "amixer -D pulse sset Master 10%+",
         volumeDown = "amixer -D pulse sset Master 10%-",
         volumeMute = "amixer set Master toggle",
@@ -29,16 +29,27 @@ return {
     },
     toolbar = {
         position = "bottom",
-        ontop = false
+        ontop = false,
+        widgets = {
+            "widgets.separator",
+            "widgets.kblayout",
+            "widgets.separator",
+            "widgets.battery",
+            "widgets.separator",
+            "widgets.volume"
+        }
     },
     popup_bar = {
         width = 200,
         position = "left",
         tasklist = {
             item_height = 50
+        },
+        widgets = {
+            "widgets.clock_big",
+            "widgets.calendar"
         }
     },
     terminal = "x-terminal-emulator",
-    configdir = awful.util.getdir("config"),
     modkey = "Mod4",
 }
