@@ -16,16 +16,17 @@ require("debian.menu")
 -- Load error handler
 require("error_handler")
 
+configdir = awful.util.getdir("config")
+
+-- Themes define colours, icons, font and wallpapers.
+beautiful.init(configdir .. "/theme/theme.lua")
+
 -- Global settings
 settings = require("settings")
-configdir = settings.configdir
 modkey = settings.modkey
 terminal = settings.terminal
 
 menubar.utils.terminal = terminal
-
--- Themes define colours, icons, font and wallpapers.
-beautiful.init(configdir .. "/theme/theme.lua")
 
 require("toolbar")
 
