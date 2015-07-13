@@ -11,12 +11,19 @@ return {
             "tools",
             {
                 { "disk management", "gnome-disks" },
-                { "disks space", "baobab" },
+                { "disk space", "baobab" },
                 { "screen management", "arandr" },
                 { "themes", "lxappearance" },
                 { "sound", "alsamixergui" },
+                { "wine",
+                    {
+                        {"desktop", "wine explorer /desktop=foo,800x600" },
+                        {"config", "winecfg" },
+                        {"tricks", "winetricks" },
+                    }
+                },
                 { "restart", awesome.restart },
-                { "quit", awesome.quit }
+                { "quit", awesome.quit },
             }
         },
         {

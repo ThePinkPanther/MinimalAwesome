@@ -1,3 +1,5 @@
+local menu_widget = require("widgets.menu")
+
 
 function toogle_main_menu()
     menu_widget.menu:toggle()
