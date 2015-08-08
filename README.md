@@ -1,6 +1,9 @@
 <h1>
  Configuration for Awesome 3.5
 </h1>
+
+"Awesome is for hackers", well, not any more. With this setup you can customize and use awesome-wm with less effort. 
+
 <hr/>
 
 <h2>Basic look:</h2>
