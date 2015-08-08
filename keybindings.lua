@@ -1,5 +1,4 @@
 local commands = settings.commands
-uselessfair = require("layout.uselessfair")
 
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
