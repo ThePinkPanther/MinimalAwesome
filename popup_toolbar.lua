@@ -82,9 +82,13 @@ local function render_popup_box(s)
     local middle_layout = wibox.layout.flex.vertical()
     middle_layout:add(mytasklist[s])
 
+    local bottom_layout = wibox.layout.fixed.vertical()
+    middle_layout:add(require("widgets.network_connection").widget)
+
     local layout = wibox.layout.align.vertical()
     layout:set_top(top_layout)
-    layout:set_middle(middle_layout)
+    layout:set_middle(middle_layout)    
+    layout:set_bottom(bottom_layout)
 
     local background = wibox.widget.background(layout)
 

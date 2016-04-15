@@ -5,7 +5,7 @@ globalkeys = awful.util.table.join(
     -- keyboard layout switch
     awful.key({ modkey, }, "z", switch_keyboard_layout),
 
-    awful.key({ modkey, }, "Print", function () awful.util.spawn_with_shell(commands.screenshot) end),
+    awful.key({ }, "Print", function () awful.util.spawn_with_shell(commands.screenshot) end),
 
     awful.key({ modkey, }, "b", function () toggle_popup_box(mouse.screen) end),
 
@@ -16,12 +16,12 @@ globalkeys = awful.util.table.join(
 
 
     -- volume controll
-    awful.key({ modkey, "Control" }, "Up", function ()
+    awful.key({ modkey, }, "Up", function ()
         awful.util.spawn(commands.volumeUp)
         update_volume()
     end),
 
-    awful.key({ modkey, "Control" }, "Down", function ()
+    awful.key({ modkey, }, "Down", function ()
         awful.util.spawn(commands.volumeDown) 
         update_volume(volume_widget)
     end),
@@ -115,7 +115,7 @@ globalkeys = awful.util.table.join(
 
 clientkeys = awful.util.table.join(
     awful.key({ modkey,           }, "f",      function (c) c.fullscreen = not c.fullscreen  end),
-    awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end),
+    awful.key({ modkey, }, "c",      function (c) c:kill()                         end),
     -- awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ),
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end),
     awful.key({ modkey,           }, "o",      awful.client.movetoscreen                        ),
