@@ -75,6 +75,7 @@ local function render_widget_box(s)
     layout:set_left(left_layout)
     layout:set_right(right_layout)
     layout:set_middle(center_layout)
+    layout.expand = 'outside'
 
     local margin = wibox.layout.margin()
 
