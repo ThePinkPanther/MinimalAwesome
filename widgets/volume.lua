@@ -9,7 +9,7 @@ local textbox = wibox.widget.textbox()
 
 local myicon = wibox.widget.imagebox()
 myicon:set_image(beautiful.titlebar_audio_icon)
-myicon:fit(2,10)
+--myicon:fit(2,10)
 
 layout:add(myicon)
 layout:add(textbox)
