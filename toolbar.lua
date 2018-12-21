@@ -53,8 +53,12 @@ local function render_widget_box(s)
     local center_layout = wibox.layout.fixed.horizontal()
     local left_layout = wibox.layout.fixed.horizontal()
     local right_layout = wibox.layout.fixed.horizontal()
---    left_layout:add(menu_widget.widget)
+    left_layout:add(menu_widget.widget)
     left_layout:add(mypromptbox[s])
+    left_layout.fill_space = true
+    right_layout.fill_space = true
+    center_layout.fill_space = false
+    
 
 
     right_layout:add(wibox.widget.systray())
@@ -69,13 +73,20 @@ local function render_widget_box(s)
         center_layout:add(widgets[widget].widget)
     end
 
-    -- Now bring it all together (with the tasklist in the middle)
-    local layout = wibox.layout.align.horizontal()
 
-    layout:set_left(left_layout)
-    layout:set_right(right_layout)
-    layout:set_middle(center_layout)
+    local layout = wibox.widget {
+        left_layout  ,
+        center_layout ,
+        right_layout  ,
+        layout  = wibox.layout.align.horizontal
+    }
     layout.expand = 'outside'
+    --Now bring it all together (with the tasklist in the middle)
+    --local layout = wibox.layout.align.horizontal()
+
+    --layout:set_left(left_layout)
+    --layout:set_right(right_layout)
+    --layout:set_middle(center_layout)
 
     local margin = wibox.layout.margin()
 
